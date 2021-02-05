@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app>
+  <v-navigation-drawer v-model="drawer" app>
     <v-list>
       <v-list-item to="/" router exact>
         <v-list-item-content>Home</v-list-item-content>
@@ -21,6 +21,13 @@
 
 <script>
 export default {
+  props: {
+    drawer: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
+  },
   data() {
     return {
       items: [
